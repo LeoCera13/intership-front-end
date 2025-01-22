@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <a href="#">Wholesale - Pros Only</a>
+            <a href="#">Retail</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search by name, category..">
+            <button>🔍</button>
+        </div>
+        <div class="icons">
+            <a href="#">Community</a>
+            <a href="#">Account</a>
+            <a href="#">Cart</a>
+        </div>
+    </div>
+    <div class="sub-header">
+        <div class="logo">
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fpain-or-pleasure-stickers&psig=AOvVaw2vX1XPj_aHAr6GRLLmpyCz&ust=1737655475343000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCPCTj5r1iYsDFQAAAAAdAAAAABAQ">
+            <span>PainfulPleasures</span>
+        </div>
+        <div class="nav">
+            <a href="#">BODY JEWELRY</a>
+            <a href="#">PIERCING</a>
+            <a href="#">TATTOO</a>
+            <a href="#">MEDICAL</a>
+            <a href="#">STUDIO</a>
+            <a href="#">PERMANENT MAKEUP</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Top Section -->
+        <div class="top-section">
+          <div class="main-banner">
+            <div class="banner-content">
+              <h1>4TH OF JULY SAVINGS ARE HERE!</h1>
+              <p class="description">SAVE 15% SITEWIDE<br>FOR ORDERS OVER $200</p>
+              <p class="code">CODE: JULY4</p>
+              <button class="shop-now">Shop Now</button>
+              <p class="validity">Valid 7/3-7/6</p>
+            </div>
+            <img src="dummy_850x450_ffffff_cccccc.png" alt="Eagle Graphic">
+          </div>
+          <div class="side-banners">
+            <div class="side-banner">
+              <img src="400x200.png" alt="Wireless Efficiency">
+              <button class="shop-now">Shop Now</button>
+            </div>
+            <div class="side-banner">
+              <img src="400x200.png" alt="Personal Protective Equipment">
+              <button class="shop-now">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="categories-section">
+        <div class="category-item">
+          <img src="dummy_200x250_ffffff_cccccc.png" alt="Tattoo Supplies">
+          <h3 class="category-title">TATTOO SUPPLIES</h3>
+          <button class="shop-button">Shop now</button>
+        </div>
+        <div class="category-item">
+          <img src="dummy_200x250_ffffff_cccccc.png" alt="Body Jewelry">
+          <h3 class="category-title">BODY JEWELRY</h3>
+          <button class="shop-button">Shop now</button>
+        </div>
+        <div class="category-item">
+          <img src="dummy_200x250_ffffff_cccccc.png" alt="Piercing Supplies">
+          <h3 class="category-title">PIERCING SUPPLIES</h3>
+          <button class="shop-button">Shop now</button>
+        </div>
+        <div class="category-item">
+          <img src="dummy_200x250_ffffff_cccccc.png" alt="Medical Supplies">
+          <h3 class="category-title">MEDICAL SUPPLIES</h3>
+          <button class="shop-button">Shop now</button>
+        </div>
+        <div class="category-item">
+          <img src="dummy_200x250_ffffff_cccccc.png" alt="Permanent Makeup">
+          <h3 class="category-title">PERMANENT MAKEUP</h3>
+          <button class="shop-button">Shop now</button>
+        </div>
+      </div>
+
+      
+      <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Product 1">
+                <h3>$449.99</h3>
+                <p>Rook Quill Rotary Tattoo Machine — Copper</p>
+            </div>
+            <div class="carousel-item">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Product 2">
+                <h3>$449.99</h3>
+                <p>Rook Quill Rotary Tattoo Machine — Blue</p>
+            </div>
+            <div class="carousel-item">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Product 3">
+                <h3>$1,199.99</h3>
+                <p>Pre-Order — Inkjecta Flite X1 Wireless Tattoo Machine</p>
+            </div>
+            <div class="carousel-item">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Product 4">
+                <h3>$1,199.99</h3>
+                <p>Pre-Order — Inkjecta Flite X1 Wireless Tattoo Machine</p>
+            </div>
+            <div class="carousel-item">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Product 5">
+                <h3>$599.99</h3>
+                <p>Special Edition Rotary Tattoo Machine — Black</p>
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
+        </div>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const itemWidth = document.querySelector('.carousel-item').clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = carousel.children.length - 1;
+            }
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < carousel.children.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+    </script>
+
+<script>
+   document.querySelector('.hamburger-menu').addEventListener('click', () => {
+    const menu = document.querySelector('.mobile-menu');
+    menu.classList.toggle('hidden');
+});
+ 
+</script>
+
+
+</body>
+</html>
